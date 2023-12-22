@@ -15,5 +15,10 @@ public class Basket extends Actor
     public void act()
     {
         // Add your action code here.
+        if (Greenfoot.isKeyDown("left")){
+            setLocation(getX() -3, getY());
+        } else if (Greenfoot.isKeyDown("right")){
+            setLocation(getX() +3, getY());
+        }
     }
 }

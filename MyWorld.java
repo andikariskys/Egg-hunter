@@ -8,7 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    static Counter nyawa = new Counter("Nyawa: ");
+    static Counter score = new Counter("Score: ");
+    static GreenfootSound sound = new GreenfootSound("backsound-french-life.wav");
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -39,5 +41,18 @@ public class MyWorld extends World
         WhiteChicken whiteChicken = new WhiteChicken();
         addObject(whiteChicken,white,240);
         whiteChicken.setLocationChicken(white);
+
+        // tambahkan data nyawa dan score pada saat game dimainkan
+        addObject(nyawa,530,778);
+        nyawa.setValue(5); // pemain hanya dapat menerima telur yang rusak sebanyak 5x
+
+        addObject(score,50,778);
+        score.setValue(0);
+        Basket basket = new Basket();
+        addObject(basket,278,732);
+    }
+    
+    public void started(){
+        sound.playLoop();
     }
 }

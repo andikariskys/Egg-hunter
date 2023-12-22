@@ -47,6 +47,7 @@ public class Chicken extends Actor
     private void bertelur(){
         // jika value time lebih dari 180 fps (3 detik) maka ayam akan bertelur
         if (time >= 240){
+            Greenfoot.playSound("chicken.wav");
             // variabel ini digunakan untuk menentukan telur maka yang akan muncul
             int jenis_telur = Greenfoot.getRandomNumber(5); 
             if (jenis_telur == 0){
